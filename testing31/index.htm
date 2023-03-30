@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIN Generator</title>
+    <link rel="stylesheet" href="testing31.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+
+ <section class="s1">
+    <h1 class="h1">PIN Generator</h1>
+    <p class="instructions">Select what you want included in your PIN</p>
+    
+<div class="range-div">
+    <p class="how-long">How long do you want your PIN?</p>
+<div class="number-input"> 
+    <input type="range" id="length-input" min="4" max="20"> <p class="range-label"></p></div>   
+</div>
+
+<section class="btns-section">
+    <input type="button" class="btns" id="uppercs-btn" value="Uppercase Letters">
+    <input type="button" class="btns" id="lowercs-btn" value="Lowercase Letters">
+    <input type="button" class="btns" id="special-btn" value="Special Characters">
+    <input type="button" class="btns" id="numbers-btn" value="Numbers">
+</section>
+   <div class="submit-area"> <input type="submit" id="submit"value="Create my PIN"></div>
+
+    <p class="pin" id="pin"></p>
+ </section>      
+
+ <script>
+    $(function()
+    {
+    $('#length-input').on('input change', function(){
+              $(this).next($('.range-label')).html(this.value);
+            });
+          $('.range-label').each(function(){
+              var value = $(this).prev().attr('value');
+              $(this).html(value);
+            });  
+      
+      
+    })
+
+ </script>
+
+    <script src="testing31.js"></script>
+</body>
+</html>
